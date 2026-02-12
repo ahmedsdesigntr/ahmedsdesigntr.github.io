@@ -8,7 +8,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-<style>
+<style> 
+
+.portfolio{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+gap:30px;
+padding-top:50px;
+}
+
+.card{
+background:#1e293b;
+border-radius:12px;
+overflow:hidden;
+transition:0.4s;
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+display:block;
+}
+
+.card h3{
+padding:15px;
+font-size:16px;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
 #hakkimda{
 padding:100px 10%;
 background:#0f172a;
