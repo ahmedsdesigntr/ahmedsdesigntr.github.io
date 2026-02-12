@@ -572,21 +572,6 @@ reveals[i].classList.add("active");
 }
 });
 </script>
-<script>
-// Dokunma / click ile portfolyo açma ve büyütme (mobil + PC)
-const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-portfolioItems.forEach(item => {
-  item.addEventListener('click', () => {
-    // Diğer açık olanları kapat
-    portfolioItems.forEach(i => {
-      if (i !== item) i.classList.remove('active');
-    });
-    // Bu öğeyi aç / kapat
-    item.classList.toggle('active');
-  });
-});
-</script>
 
 
 </body>
