@@ -4,102 +4,245 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmeds Design</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body {
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
+    padding: 0;
+    box-sizing: border-box;
 }
-header {
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
     background: #0f172a;
-    color: white;
-    padding: 20px;
-    text-align: center;
+    color: #f1f5f9;
 }
+
+/* NAVBAR */
+
 nav {
-    background: #1e293b;
-    text-align: center;
-    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    z-index: 1000;
 }
-nav a {
-    color: white;
-    margin: 0 15px;
+
+nav img {
+    height: 55px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
     text-decoration: none;
+    color: #f1f5f9;
+    font-weight: 400;
+    transition: 0.3s;
 }
-section {
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: auto;
+
+nav ul li a:hover {
+    color: #38bdf8;
 }
+
+/* HERO */
+
 .hero {
-    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8%;
 }
-.button {
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #94a3b8;
+    max-width: 600px;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
     display: inline-block;
-    padding: 12px 25px;
-    background: #16a34a;
-    color: white;
+    padding: 12px 28px;
+    margin-right: 15px;
+    border-radius: 30px;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
+    font-weight: 500;
+    transition: 0.3s;
 }
-footer {
-    background: #0f172a;
+
+.btn-primary {
+    background: linear-gradient(90deg, #38bdf8, #a855f7);
     color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+}
+
+.btn-outline:hover {
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+/* SECTION */
+
+section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+/* SERVICES */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: #263244;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.portfolio div {
+    background: #1e293b;
+    height: 200px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.portfolio div:hover {
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+
+footer {
+    background: #0b1120;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+}
+
+footer img {
+    height: 40px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px){
+    .hero h1 {
+        font-size: 32px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>Ahmeds Design</h1>
-<p>Grafik Tasarım & Tekstil Kalıp Uzmanı</p>
-</header>
-
 <nav>
-<a href="#hakkimda">Hakkımda</a>
-<a href="#hizmetler">Hizmetler</a>
-<a href="#portfolyo">Portfolyo</a>
-<a href="#iletisim">İletişim</a>
+    <img src="logo.png" alt="Ahmeds Design">
+    <ul>
+        <li><a href="#hakkimda">Hakkımda</a></li>
+        <li><a href="#hizmetler">Hizmetler</a></li>
+        <li><a href="#portfolyo">Portfolyo</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+    </ul>
 </nav>
 
-<section class="hero">
-<h2>Profesyonel Grafik ve Kalıp Tasarım Hizmeti</h2>
-<p>Gerber AccuMark, AccuNest ve grafik tasarım çözümleri.</p>
-<a class="button" href="https://wa.me/905XXXXXXXXX">WhatsApp ile Ulaş</a>
-</section>
-
-<section id="hakkimda">
-<h2>Hakkımda</h2>
-<p>Grafik tasarım ve tekstil kalıp alanında profesyonel hizmet veriyorum. Gerber teknolojisi ile kalıp tasarımı ve serileme yapıyorum.</p>
-</section>
+<div class="hero">
+    <h1>Tekstil Atölyeleri ve Markalar İçin Profesyonel Kalıp & Grafik Tasarım</h1>
+    <p>Gerber AccuMark, AccuNest ve profesyonel grafik tasarım çözümleri ile uzaktan hizmet veriyorum.</p>
+    <div class="buttons">
+        <a href="https://wa.me/905XXXXXXXXX" class="btn btn-primary">WhatsApp</a>
+        <a href="#iletisim" class="btn btn-outline">Email</a>
+    </div>
+</div>
 
 <section id="hizmetler">
-<h2>Hizmetlerim</h2>
-<ul>
-<li>Logo Tasarımı</li>
-<li>Tişört Tasarımı</li>
-<li>Banner & Sosyal Medya</li>
-<li>Gerber AccuMark Kalıp Hazırlama</li>
-<li>AccuNest ile Fire Optimizasyonu</li>
-</ul>
+    <h2 class="section-title">Hizmetlerim</h2>
+    <div class="services">
+        <div class="card">Gerber AccuMark Kalıp Tasarımı</div>
+        <div class="card">AccuNest Serileme & Fire Optimizasyonu</div>
+        <div class="card">Logo & Marka Tasarımı</div>
+        <div class="card">Tişört & Banner Tasarımı</div>
+    </div>
 </section>
 
 <section id="portfolyo">
-<h2>Portfolyo</h2>
-<p>Çalışmalarım yakında eklenecek.</p>
+    <h2 class="section-title">Portfolyo</h2>
+    <div class="portfolio">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </section>
 
 <section id="iletisim">
-<h2>İletişim</h2>
-<p>Email: seninmailadresin@gmail.com</p>
+    <h2 class="section-title">İletişim</h2>
+    <p>Email: seninmailin@gmail.com</p>
 </section>
 
 <footer>
-<p>© 2026 Ahmeds Design</p>
+    <img src="logo.png" alt="Ahmeds Design">
+    <p>© 2026 Ahmeds Design</p>
 </footer>
 
 </body>
