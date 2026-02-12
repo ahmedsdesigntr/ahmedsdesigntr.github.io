@@ -221,47 +221,68 @@ box-shadow:0 15px 35px rgba(0,0,0,0.3);
 }
 
 /* PORTFOLIO */
-
-.portfolio{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-.portfolio-item{
-position:relative;
-overflow:hidden;
-border-radius:15px;
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
 }
 
-.portfolio-item img{
-width:100%;
-height:250px;
-object-fit:cover;
-display:block;
-transition:0.4s;
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  max-height: 300px; /* maksimum yüksekliği sınırla */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
 }
 
-.portfolio-overlay{
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(to top, rgba(15,23,42,0.9), transparent);
-display:flex;
-align-items:flex-end;
-padding:20px;
-opacity:0;
-transition:0.4s;
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  text-align: center;
 }
 
-.portfolio-item:hover img{transform:scale(1.1);}
-.portfolio-item:hover .portfolio-overlay{opacity:1;}
-
-.portfolio-overlay h3{
-font-size:16px;
+.portfolio-item:hover img {
+  transform: scale(1.05);
 }
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-overlay h3 {
+  font-size: 16px;
+  color: #fff;
+  margin: 0;
+}
+
+/* Responsive mobil için */
+@media (max-width: 600px) {
+  .portfolio-item img {
+    max-height: 200px;
+  }
+
+  .portfolio-overlay h3 {
+    font-size: 14px;
+  }
+}
+
 
 /* CONTACT */
 
@@ -440,52 +461,69 @@ Tüm çalışmalar baskıya ve üretime hazır formatta teslim edilir.
 >
 
 <section id="portfolyo">
-<h2 class="section-title reveal">Çalışmalarım</h2>
+  <h2 class="section-title reveal">Çalışmalarım</h2>
 
-<div class="portfolio">
+  <div class="portfolio">
 
-<div class="card reveal">
-<img src="calisma1.jpg" alt="Kalıp Tasarımı">
-<h3>Gerber Kalıp Çalışması</h3>
-</div>
+    <div class="portfolio-item reveal">
+      <img src="calisma1.jpg" alt="Gerber Kalıp Hazırlama">
+      <div class="portfolio-overlay">
+        <h3>Gerber Kalıp Hazırlama</h3>
+      </div>
+    </div>
 
-<div class="card reveal">
-<img src="calisma2.jpg" alt="Serileme">
-<h3>AccuNest Serileme</h3>
-</div>
+    <div class="portfolio-item reveal">
+      <img src="calisma2.jpg" alt="AccuNest Serileme">
+      <div class="portfolio-overlay">
+        <h3>AccuNest Serileme</h3>
+      </div>
+    </div>
 
-<div class="card reveal">
-<img src="calisma3.jpg" alt="Tişört Tasarımı">
-<h3>Oversize Tişört Tasarımı</h3>
-</div>
+    <div class="portfolio-item reveal">
+      <img src="calisma3.jpg" alt="Oversize Tişört Tasarımı">
+      <div class="portfolio-overlay">
+        <h3>Oversize Tişört Tasarımı</h3>
+      </div>
+    </div>
 
-<div class="card reveal">
-<img src="calisma4.jpg" alt="Logo Tasarımı">
-<h3>Marka Logo Tasarımı</h3>
-</div>
+    <div class="portfolio-item reveal">
+      <img src="calisma4.jpg" alt="Logo Tasarımı">
+      <div class="portfolio-overlay">
+        <h3>Logo Tasarımı</h3>
+      </div>
+    </div>
 
-<div class="card reveal">
-<img src="calisma5.jpg" alt="Banner Tasarımı">
-<h3>Sosyal Medya Banner</h3>
-</div>
+    <div class="portfolio-item reveal">
+      <img src="calisma5.jpg" alt="Teknik Çizim">
+      <div class="portfolio-overlay">
+        <h3>Teknik Çizim</h3>
+      </div>
+    </div>
 
-<div class="card reveal">
-<img src="calisma6.jpg" alt="Teknik Çizim">
-<h3>Teknik Çizim & Ölçülendirme</h3>
-</div>
+    <div class="portfolio-item reveal">
+      <img src="calisma6.jpg" alt="Etiket & Baskı Tasarımı">
+      <div class="portfolio-overlay">
+        <h3>Etiket & Baskı Tasarımı</h3>
+      </div>
+    </div>
 
-<div class="card reveal">
-<img src="calisma7.jpg" alt="Etiket Tasarımı">
-<h3>Etiket & Baskı Tasarımı</h3>
-</div>
+    <div class="portfolio-item reveal">
+      <img src="calisma7.jpg" alt="Banner Tasarımı">
+      <div class="portfolio-overlay">
+        <h3>Banner Tasarımı</h3>
+      </div>
+    </div>
 
-<div class="card reveal">
-<img src="calisma8.jpg" alt="Koleksiyon Çalışması">
-<h3>Koleksiyon Hazırlık Çalışması</h3>
-</div>
+    <div class="portfolio-item reveal">
+      <img src="calisma8.jpg" alt="Koleksiyon Hazırlık">
+      <div class="portfolio-overlay">
+        <h3>Koleksiyon Hazırlık</h3>
+      </div>
+    </div>
 
-</div>
+  </div>
 </section>
+
 
 </div>
 <section id="iletisim" class="contact reveal">
