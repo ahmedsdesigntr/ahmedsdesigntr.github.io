@@ -749,27 +749,29 @@ filterBtns.forEach(btn => {
 });
 </script>
 
+
 <script>
 
-// Modal elemanları
 const modal = document.getElementById("portfolioModal");
 const modalImg = document.getElementById("modalImg");
 const closeBtn = document.getElementById("modalClose");
 
-// Tüm portfolio görselleri
 document.querySelectorAll(".portfolio-item img").forEach(img => {
   img.addEventListener("click", function() {
     modal.style.display = "flex";
     modalImg.src = this.src;
+
+    // overlay gizle
+    document.querySelectorAll(".portfolio-overlay").forEach(o => {
+      o.style.opacity = "0";
+    });
   });
 });
 
-// Kapatma butonu
 closeBtn.addEventListener("click", function() {
   modal.style.display = "none";
 });
 
-// Arka plana tıklayınca kapansın
 modal.addEventListener("click", function(e){
   if(e.target === modal){
     modal.style.display = "none";
@@ -777,6 +779,7 @@ modal.addEventListener("click", function(e){
 });
 
 </script>
+
 
 </body>
 </html>
