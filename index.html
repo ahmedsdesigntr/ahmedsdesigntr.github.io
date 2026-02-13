@@ -222,60 +222,75 @@ background:#263244;
 box-shadow:0 15px 35px rgba(0,0,0,0.3);
 }
 
-/* PORTFOLIO */
+/* Masonry Grid */
 .portfolio {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
 }
 
 .portfolio-item {
   position: relative;
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.4s;
+  transition: transform 0.3s;
 }
 
 .portfolio-item img {
   width: 100%;
   height: 100%;
-  max-height: 300px;
   object-fit: cover;
   display: block;
   transition: transform 0.4s;
 }
 
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
 .portfolio-overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent);
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:18px;
+  opacity:0;
+  transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity:1;
+}
+
+/* Filtreleme Butonları */
+.portfolio-filters {
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.4s;
-  text-align: center;
+  gap: 10px;
 }
 
-.portfolio-overlay h3 {
-  font-size: 16px;
-  color: #fff;
-  margin: 0;
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid #38bdf8;
+  background: transparent;
+  color: #38bdf8;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: 0.3s;
 }
 
-/* Hover veya büyütülmüş durum */
-.portfolio-item.active img {
-  transform: scale(1.2);
+.filter-btn.active,
+.filter-btn:hover {
+  background: #38bdf8;
+  color: #0f172a;
 }
-
-.portfolio-item.active .portfolio-overlay {
-  opacity: 1;
-}
+</style>
 
 /* Responsive mobil için */
 @media (max-width: 600px) {
@@ -468,66 +483,58 @@ Tüm çalışmalar baskıya ve üretime hazır formatta teslim edilir.
 <section id="portfolyo">
   <h2 class="section-title reveal">Çalışmalarım</h2>
 
+  <!-- Kategori filtreleri -->
+  <div class="portfolio-filters reveal" style="margin-bottom:20px;">
+    <button class="filter-btn active" data-filter="all">Tümü</button>
+    <button class="filter-btn" data-filter="kalip">Kalıp</button>
+    <button class="filter-btn" data-filter="tisort">Tişört Tasarımı</button>
+    <button class="filter-btn" data-filter="logo">Logo & Tasarım</button>
+  </div>
+
   <div class="portfolio">
-
-    <div class="portfolio-item reveal">
+    <div class="portfolio-item" data-category="kalip">
       <img src="calisma1.jpg" alt="Gerber Kalıp Hazırlama">
-      <div class="portfolio-overlay">
-        <h3>Gerber Kalıp Hazırlama</h3>
-      </div>
+      <div class="portfolio-overlay"><h3>Gerber Kalıp Hazırlama</h3></div>
     </div>
 
-    <div class="portfolio-item reveal">
+    <div class="portfolio-item" data-category="kalip">
       <img src="calisma2.jpg" alt="AccuNest Serileme">
-      <div class="portfolio-overlay">
-        <h3>AccuNest Serileme</h3>
-      </div>
+      <div class="portfolio-overlay"><h3>AccuNest Serileme</h3></div>
     </div>
 
-    <div class="portfolio-item reveal">
+    <div class="portfolio-item" data-category="tisort">
       <img src="calisma3.jpg" alt="Oversize Tişört Tasarımı">
-      <div class="portfolio-overlay">
-        <h3>Oversize Tişört Tasarımı</h3>
-      </div>
+      <div class="portfolio-overlay"><h3>Oversize Tişört Tasarımı</h3></div>
     </div>
 
-    <div class="portfolio-item reveal">
+    <div class="portfolio-item" data-category="logo">
       <img src="calisma4.jpg" alt="Logo Tasarımı">
-      <div class="portfolio-overlay">
-        <h3>Logo Tasarımı</h3>
-      </div>
+      <div class="portfolio-overlay"><h3>Logo Tasarımı</h3></div>
     </div>
 
-    <div class="portfolio-item reveal">
+    <div class="portfolio-item" data-category="kalip">
       <img src="calisma5.jpg" alt="Teknik Çizim">
-      <div class="portfolio-overlay">
-        <h3>Teknik Çizim</h3>
-      </div>
+      <div class="portfolio-overlay"><h3>Teknik Çizim</h3></div>
     </div>
 
-    <div class="portfolio-item reveal">
-      <img src="calisma6.jpg" alt="Etiket & Baskı Tasarımı">
-      <div class="portfolio-overlay">
-        <h3>Etiket & Baskı Tasarımı</h3>
-      </div>
+    <div class="portfolio-item" data-category="logo">
+      <img src="calisma6.jpg" alt="Etiket Tasarımı">
+      <div class="portfolio-overlay"><h3>Etiket Tasarımı</h3></div>
     </div>
 
-    <div class="portfolio-item reveal">
+    <div class="portfolio-item" data-category="logo">
       <img src="calisma7.jpg" alt="Banner Tasarımı">
-      <div class="portfolio-overlay">
-        <h3>Banner Tasarımı</h3>
-      </div>
+      <div class="portfolio-overlay"><h3>Banner Tasarımı</h3></div>
     </div>
 
-    <div class="portfolio-item reveal">
+    <div class="portfolio-item" data-category="tisort">
       <img src="calisma8.jpg" alt="Koleksiyon Hazırlık">
-      <div class="portfolio-overlay">
-        <h3>Koleksiyon Hazırlık</h3>
-      </div>
+      <div class="portfolio-overlay"><h3>Koleksiyon Hazırlık</h3></div>
     </div>
-
   </div>
 </section>
+
+
 
 <!-- PORTFOLYO MODAL -->
 <div id="portfolioModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:2000;">
@@ -582,36 +589,25 @@ reveals[i].classList.add("active");
 </script>
 
 <script>
-// Modal elemanlarını seç
-const modal = document.getElementById("portfolioModal");
-const modalImg = document.getElementById("modalImg");
-const modalClose = document.getElementById("modalClose");
-const portfolioItems = document.querySelectorAll(".portfolio-item img");
+// Filtreleme
+const filterBtns = document.querySelectorAll(".filter-btn");
+const portfolioItems = document.querySelectorAll(".portfolio-item");
 
-// Her portfolyo görseline tıklayınca modal aç
-portfolioItems.forEach(img => {
-  img.addEventListener("click", () => {
-    modal.style.display = "flex";   // modal aç
-    modalImg.src = img.src;          // tıklanan görseli modalda göster
-    document.body.style.overflow = "hidden"; // sayfa scroll kapanır
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // Buton aktif sınıf
+    filterBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+    portfolioItems.forEach(item => {
+      if(filter === "all" || item.dataset.category === filter) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
   });
-});
-
-modalImg.style.objectFit = "contain";
-
-
-// Kapat butonuna tıklayınca modal kapansın
-modalClose.addEventListener("click", () => {
-  modal.style.display = "none";
-  document.body.style.overflow = "auto"; // scroll açılır
-});
-
-// Arka plana tıklayınca modal kapansın
-modal.addEventListener("click", e => {
-  if(e.target === modal){
-    modal.style.display = "none";
-    document.body.style.overflow = "auto"; // scroll açılır
-  }
 });
 </script>
 
