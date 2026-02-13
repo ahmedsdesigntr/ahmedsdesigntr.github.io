@@ -730,6 +730,8 @@ class="btn btn-outline">
    target="_blank" 
    class="whatsapp-float">💬</a>
 
+
+
 <script>
 window.addEventListener("scroll", function(){
 let reveals=document.querySelectorAll(".reveal");
@@ -743,6 +745,7 @@ reveals[i].classList.add("active");
 }
 });
 </script>
+
 
 <script>
 // Filtreleme
@@ -772,31 +775,20 @@ filterBtns.forEach(btn => {
 
 const modal = document.getElementById("portfolioModal");
 const modalImg = document.getElementById("modalImg");
-const closeBtn = document.getElementById("modalClose");
 
 document.querySelectorAll(".portfolio-item img").forEach(img => {
   img.addEventListener("click", function() {
     modal.style.display = "flex";
     modalImg.src = this.src;
-
-    // overlay gizle
-    document.querySelectorAll(".portfolio-overlay").forEach(o => {
-      o.style.opacity = "0";
-    });
   });
 });
 
-closeBtn.addEventListener("click", function() {
+modal.addEventListener("click", function() {
   modal.style.display = "none";
 });
 
-modal.addEventListener("click", function(e){
-  if(e.target === modal){
-    modal.style.display = "none";
-  }
-});
-
 </script>
+
 
 
 </body>
